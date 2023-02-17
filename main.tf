@@ -1,15 +1,12 @@
 provider "azurerm" {
     features {}
 }
-resource "azurerm_resource_group" "cosmos-hs" {
-  location = "eastus"
-  name = "hs-bajaj"
-  tags = {
-    Name = "Heta"
-    Day = "5"
-  }
+variable "location" {
+  default = "eastus"
 }
-
+variable "name" {
+  default = "hs-bajaj"
+}
 resource "azurerm_resource_group" "hs-bajaj" {
   location = var.location
   name = var.name
